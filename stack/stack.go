@@ -5,11 +5,11 @@ import "fmt"
 var NoSuchElementException = fmt.Errorf("No such element")
 
 func New() *Stack {
-	return &Stack{Arr: []int{}}
+	return &Stack{arr: []int{}}
 }
 
 type Stack struct {
-	Arr []int
+	arr []int
 }
 
 func (s Stack) IsEmpty() bool {
@@ -17,11 +17,11 @@ func (s Stack) IsEmpty() bool {
 }
 
 func (s Stack) Size() int {
-	return len(s.Arr)
+	return len(s.arr)
 }
 
 func (s *Stack) Push(val int) error {
-	s.Arr = append(s.Arr, val)
+	s.arr = append(s.arr, val)
 	return nil
 }
 
@@ -32,7 +32,7 @@ func (s *Stack) Pop() (int, error) {
 
 	lastIdx := s.Size() - 1
 	val := s.getLastElement()
-	s.Arr = s.Arr[:lastIdx]
+	s.arr = s.arr[:lastIdx]
 	return val, nil
 }
 
@@ -46,5 +46,5 @@ func (s *Stack) Peek() (int, error) {
 }
 
 func (s *Stack) getLastElement() int {
-	return s.Arr[len(s.Arr)-1]
+	return s.arr[len(s.arr)-1]
 }

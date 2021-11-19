@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestNewSet(t *testing.T) {
+func TestNewStack(t *testing.T) {
 	s := stack.New()
 	t.Run(
 		"A stack is empty on construction", func(t *testing.T) {
@@ -87,6 +87,3 @@ func TestError(t *testing.T) {
 		assert.Equal(t, stack.NoSuchElementException, err)
 	})
 }
-
-//
-//
